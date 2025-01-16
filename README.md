@@ -119,7 +119,3 @@ The template uses several LaTeX packages. Most are included in standard LaTeX di
 ## License
 
 This template is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! This template is actively used for mathematics courses at UC Berkeley and is continuously being improved.
