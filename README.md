@@ -2,6 +2,10 @@
 
 A comprehensive LaTeX template designed for mathematical notes, proofs, and academic writing, with a focus on Analysis and Advanced Mathematics. Features beautiful theorem-like environments with consistent styling and colors.
 
+## Acknowledgment
+
+This template is forked from [BrandonPacewic/LaTexTemplates](https://github.com/BrandonPacewic/LaTexTemplates). Special thanks to Brandon Pacewic for creating the original template that served as the foundation for this work.
+
 ## Overview
 
 This template was created for MATH 104 (Introduction to Analysis) at UC Berkeley, but it's suitable for any advanced mathematics course. It provides a clean, professional layout with color-coded environments for theorems, definitions, examples, and more.
