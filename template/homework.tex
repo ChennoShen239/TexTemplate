@@ -1,0 +1,62 @@
+% Math Homework Template
+% SPDX-License-Identifier: MIT
+
+\documentclass[12pt,a4paper]{article}
+
+\input{preamble}
+
+% Header setup
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Left header: Course info and homework number
+\lhead{MATH 104 - Analysis \\ Homework 1}
+% Right header: Name and date
+\rhead{Chen Gao \\ Due: February 1, 2025}
+% Center footer: Page number
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{note}
+    Please write your solutions clearly and show all work. Use complete sentences
+    where appropriate. You may use any theorem proved in class.
+\end{note}
+
+% Example Problem 1
+\begin{Problem}{Limit Evaluation}{prob:limit}
+    Evaluate the following limit and prove your answer:
+    \[\lim_{x \to 0} \frac{\sin(x)}{x}\]
+\end{Problem}
+
+\begin{solution}
+    We will prove that $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$ using the squeeze theorem.
+    
+    First, recall that for $x \neq 0$:
+    \[\cos(x) \leq \frac{\sin(x)}{x} \leq 1\]
+    
+    Since $\lim_{x \to 0} \cos(x) = 1$, by the squeeze theorem:
+    \[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]
+\end{solution}
+
+% Example Problem 2
+\begin{Problem}{Sequence Convergence}{prob:sequence}
+    Determine whether the sequence $a_n = \frac{n^2 + 1}{n^2 - 1}$ converges as $n \to \infty$.
+    If it converges, find its limit.
+\end{Problem}
+
+\begin{solution}
+    Let's analyze $\lim_{n \to \infty} \frac{n^2 + 1}{n^2 - 1}$
+    
+    \begin{align*}
+        \lim_{n \to \infty} \frac{n^2 + 1}{n^2 - 1} 
+        &= \lim_{n \to \infty} \frac{1 + \frac{1}{n^2}}{1 - \frac{1}{n^2}} \\
+        &= \frac{1 + 0}{1 - 0} = 1
+    \end{align*}
+    
+    Therefore, the sequence converges to 1.
+\end{solution}
+
+\end{document} 

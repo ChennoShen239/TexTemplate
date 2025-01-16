@@ -1,6 +1,6 @@
-# LaTeX Template for Mathematical Notes
+# LaTeX Templates for Mathematical Notes and Homework
 
-A comprehensive LaTeX template designed for mathematical notes, proofs, and academic writing, with a focus on Analysis and Advanced Mathematics. Features beautiful theorem-like environments with consistent styling and colors.
+A comprehensive collection of LaTeX templates designed for mathematical notes, homework assignments, and academic writing, with a focus on Analysis and Advanced Mathematics. Features beautiful theorem-like environments with consistent styling and colors.
 
 ## Acknowledgment
 
@@ -8,90 +8,61 @@ This template is forked from [BrandonPacewic/LaTexTemplates](https://github.com/
 
 ## Overview
 
-This template was created for MATH 104 (Introduction to Analysis) at UC Berkeley, but it's suitable for any advanced mathematics course. It provides a clean, professional layout with color-coded environments for theorems, definitions, examples, and more.
+These templates were created for MATH 104 (Introduction to Analysis) at UC Berkeley. The collection includes:
+
+1. **Notes Template** (`template.tex`): A comprehensive template for taking detailed course notes
+2. **Homework Template** (`homework.tex`): A clean, professional template for homework submissions
 
 ## Features
 
-- **Clean and Professional Design**: Carefully crafted layout with consistent spacing and margins
+### Common Features (Both Templates)
 - **Beautiful Theorem Environments**: Color-coded environments for different types of content:
   - Theorems (Blue) - For important mathematical statements and proofs
-  - Examples (Green) - For illustrative examples (e.g., continuous functions)
-  - Definitions (Violet) - For formal mathematical definitions (e.g., limits, vector spaces)
-  - Exercises (Teal) - For practice problems (e.g., derivative computations)
-  - Notes (Orange) - For additional insights and explanations
-  - Problems (Red) - For challenging problems and research questions
-  - Solutions (Light Blue) - For detailed solution explanations
-- **Advanced Mathematical Support**: Full support for mathematical symbols, equations, and diagrams
-- **Cross-referencing**: Built-in support for references and hyperlinks
-- **Algorithm Support**: Environment for writing algorithms (e.g., Selection Sort)
-- **Graph Drawing**: TikZ and pgfplots integration for creating mathematical graphs
+  - Examples (Green) - For illustrative examples
+  - Definitions (Violet) - For formal mathematical definitions
+  - Exercises (Teal) - For practice problems
+  - Notes (Orange) - For additional insights
+  - Problems (Red) - For challenging problems
+  - Solutions (Light Blue) - For detailed solutions
+
+### Notes Template Features
+- Clean and professional layout with consistent spacing
+- Table of contents for easy navigation
+- Advanced mathematical typesetting support
+- Graph drawing capabilities with TikZ
+- Algorithm writing support
+
+### Homework Template Features
+- Professional header with course info and student details
+- Page numbers in footer
+- Compact and clean design
+- Focus on problem-solution format
 
 ## Example Usage
 
-### Course Information
-```latex
-\title{Introduction to Analysis}
-\author{Chen Gao}
-\date{Spring 2025}
-
-\begin{center}
-\begin{tabular}{ll}
-\textbf{Course:} & MATH 104 \\
-\textbf{Institution:} & University of California, Berkeley \\
-\textbf{Semester:} & Spring 2025
-\end{tabular}
-\end{center}
-```
-
-### Theorem-like Environments
-
+### Notes Template
 ```latex
 \begin{Definition}{Limit of a Function}{def:limit}
     For a function $f(x)$, we say $\lim_{x \to a} f(x) = L$ if for every $\epsilon > 0$, 
     there exists a $\delta > 0$ such that:
     \[0 < |x - a| < \delta \implies |f(x) - L| < \epsilon\]
 \end{Definition}
-
-\begin{Theorem}{Limit Laws}{thm:limit-laws}
-    If $\lim_{x \to a} f(x) = L$ and $\lim_{x \to a} g(x) = M$, then:
-    \begin{enumerate}
-        \item $\lim_{x \to a} [f(x) + g(x)] = L + M$
-        \item $\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M$
-        \item $\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}$, if $M \neq 0$
-    \end{enumerate}
-\end{Theorem}
-
-\begin{Example}{Continuous Function}{ex:continuous}
-    Consider $f(x) = x^2$. This function is continuous at every point $x \in \mathbb{R}$ because:
-    \[\lim_{h \to 0} [f(x+h) - f(x)] = \lim_{h \to 0} [(x+h)^2 - x^2] = 0\]
-\end{Example}
 ```
 
-### Mathematical Features
-
-The template includes support for:
-- Advanced equation formatting and alignment
-- Matrix and vector operations
-- Commutative diagrams
-- Custom mathematical operators
-- Automatic equation numbering and referencing
-
-### Graphing Support
-
+### Homework Template
 ```latex
-\begin{figure}[ht]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            xlabel={$x$},
-            ylabel={$f(x)$},
-            title={Quadratic Function $f(x) = x^2 - 2x + 1$},
-            grid=major
-        ]
-        \addplot[color=blue,mark=*,smooth] {x^2 - 2*x + 1};
-        \end{axis}
-    \end{tikzpicture}
-\end{figure}
+% Header setup
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Left header: Course info and homework number
+\lhead{MATH 104 - Analysis \\ Homework 1}
+% Right header: Name and date
+\rhead{Your Name \\ Due: Date}
+% Center footer: Page number
+\cfoot{\thepage}
 ```
 
 ## Installation
@@ -106,19 +77,19 @@ The template includes support for:
    cp template/* your/working/directory/
    ```
 
-3. Rename template.tex to your desired filename:
-   ```bash
-   mv template.tex your_file.tex
-   ```
+3. Choose the appropriate template:
+   - For course notes: Use `template.tex`
+   - For homework: Use `homework.tex`
 
 ## Required Packages
 
-The template uses several LaTeX packages. Most are included in standard LaTeX distributions like TeX Live. Key packages include:
+The templates use several LaTeX packages. Most are included in standard LaTeX distributions like TeX Live. Key packages include:
 - amsmath, amsfonts, amsthm, amssymb
 - tcolorbox (for beautiful theorem environments)
 - tikz, pgfplots (for graphs and diagrams)
 - hyperref (for cross-referencing)
 - algorithm2e (for algorithms)
+- fancyhdr (for homework template headers)
 
 ## License
 
