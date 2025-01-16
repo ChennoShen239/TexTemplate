@@ -1,21 +1,149 @@
-% Copyright (c) Brandon Pacewic
+% Math Class Notes
+% Prepared by Chen Gao
 % SPDX-License-Identifier: MIT
 
-\documentclass{report}
+\documentclass[12pt,a4paper]{article}
 
 \input{preamble}
 
-\title{\Huge{Some Class}\\Random Examples}
-\author{\huge{Brandon Pacewic}}
-\date{}
+% Hyperref configuration for better TOC and cross-referencing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Mathematical Analysis Class Notes},
+    pdfauthor={Chen Gao},
+    pdfpagemode=FullScreen,
+}
+
+\title{Introduction to Analysis}
+\author{Chen Gao}
+\date{Spring 2025}
 
 \begin{document}
 
 \maketitle
-\newpage
-\tableofcontents
-\pagebreak
 
-% Start Here
+% Course Information
+\begin{center}
+\begin{tabular}{ll}
+\textbf{Course:} & MATH 104 \\
+\textbf{Instructor:} & Professor [Name] \\
+\textbf{Institution:} & University of California, Berkeley \\
+\textbf{Semester:} & Spring \the\year
+\end{tabular}
+\end{center}
+
+% Ensure proper TOC generation
+\tableofcontents
+\clearpage
+
+\section{Course Overview}
+\begin{note}
+    These notes compile key concepts, theorems, and insights from the Mathematical Analysis course. 
+    They serve as a comprehensive reference for understanding advanced mathematical principles.
+\end{note}
+
+\section{Limits and Continuity}
+
+\subsection{Fundamental Limit Concepts}
+\begin{Definition}{Limit of a Function}{def:limit}
+    For a function $f(x)$, we say $\lim_{x \to a} f(x) = L$ if for every $\epsilon > 0$, there exists a $\delta > 0$ such that:
+    \[0 < |x - a| < \delta \implies |f(x) - L| < \epsilon\]
+\end{Definition}
+
+\begin{Theorem}{Limit Laws}{thm:limit-laws}
+    If $\lim_{x \to a} f(x) = L$ and $\lim_{x \to a} g(x) = M$, then:
+    \begin{enumerate}
+        \item $\lim_{x \to a} [f(x) + g(x)] = L + M$
+        \item $\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M$
+        \item $\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}$, if $M \neq 0$
+    \end{enumerate}
+\end{Theorem}
+
+\subsection{Continuity Analysis}
+\begin{Example}{Continuous Function}{ex:continuous}
+    Consider $f(x) = x^2$. This function is continuous at every point $x \in \mathbb{R}$ because:
+    \[\lim_{h \to 0} [f(x+h) - f(x)] = \lim_{h \to 0} [(x+h)^2 - x^2] = 0\]
+\end{Example}
+
+\section{Differentiation Techniques}
+
+\subsection{Product Rule Exploration}
+\begin{Exercise}{Derivative Computation}{ex:derivative}
+    Compute the derivative of $f(x) = x^3 \sin(x)$ using the product rule.
+\end{Exercise}
+
+\begin{solution}
+    Using the product rule, $\frac{d}{dx}[f(x)] = \frac{d}{dx}[x^3] \cdot \sin(x) + x^3 \cdot \frac{d}{dx}[\sin(x)]$
+    \begin{align*}
+        f'(x) &= 3x^2 \sin(x) + x^3 \cos(x)
+    \end{align*}
+\end{solution}
+
+\section{Linear Algebra Foundations}
+
+\subsection{Vector Space Fundamentals}
+\begin{Definition}{Vector Space}{def:vector-space}
+    A vector space $V$ over a field $\mathbb{F}$ is a set with two operations:
+    \begin{itemize}
+        \item Vector addition: $+: V \times V \to V$
+        \item Scalar multiplication: $\cdot: \mathbb{F} \times V \to V$
+    \end{itemize}
+    satisfying specific axioms of vector spaces.
+\end{Definition}
+
+\begin{Example}{Linear Transformation}{ex:linear-transform}
+    Consider a linear transformation $T: \mathbb{R}^2 \to \mathbb{R}^2$ defined by:
+    \[T\begin{pmatrix}x \\ y\end{pmatrix} = \begin{pmatrix}2x - y \\ x + 3y\end{pmatrix}\]
+    This transformation preserves vector addition and scalar multiplication.
+\end{Example}
+
+\section{Numerical Methods}
+
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \KwData{Input array $A$ of $n$ elements}
+    \KwResult{Sorted array in ascending order}
+    \Begin{
+        \For{$i \gets 1$ \KwTo $n-1$}{
+            $\min\_idx \gets i$\;
+            \For{$j \gets i+1$ \KwTo $n$}{
+                \If{$A[j] < A[\min\_idx]$}{
+                    $\min\_idx \gets j$\;
+                }
+            }
+            Swap $A[i]$ and $A[\min\_idx]$\;
+        }
+    }
+    \caption{Selection Sort Algorithm}
+\end{algorithm}
+
+\section{Graphical Representations}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={$x$},
+            ylabel={$f(x)$},
+            title={Quadratic Function $f(x) = x^2 - 2x + 1$},
+            grid=major
+        ]
+        \addplot[color=blue,mark=*,smooth] {x^2 - 2*x + 1};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\section{Supplementary Notes}
+
+\begin{note}
+    These notes are a personal compilation of key mathematical concepts, serving as a study aid and reference for Advanced Mathematical Analysis.
+\end{note}
+
+\begin{Problem}{Research Challenge}{prob:research}
+    Investigate the convergence properties of the series $\sum_{n=1}^{\infty} \frac{1}{n^p}$ for different values of $p$.
+\end{Problem}
 
 \end{document}
